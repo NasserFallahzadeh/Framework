@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\2.Core\DDDZamin.Core.Contracts\DDDZamin.Core.Contracts.csproj" />
+    <ProjectReference Include="..\MIniblog.Core.Domain\Miniblog.Core.Domain.csproj" />
+    <ProjectReference Include="..\Miniblog.Core.RequestResponse\Miniblog.Core.RequestResponse.csproj" />
+  </ItemGroup>
+
+</Project>

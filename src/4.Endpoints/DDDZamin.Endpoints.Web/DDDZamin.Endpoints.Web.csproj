@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Utilities\DDDZamin.Utilities\DDDZamin.Utilities.csproj" />
+    <ProjectReference Include="..\..\2.Core\DDDZamin.Core.ApplicationServices\DDDZamin.Core.ApplicationServices.csproj" />
+    <ProjectReference Include="..\..\2.Core\DDDZamin.Core.Contracts\DDDZamin.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\2.Core\DDDZamin.Core.Domain\DDDZamin.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\2.Core\DDDZamin.Core.RequestResponse\DDDZamin.Core.RequestResponse.csproj" />
+    <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Queries\DDDZamin.Infrastructure.Data.Sql.Queries.csproj" />
+    <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Sql.Commands\DDDZamin.Infrastructure.Data.Sql.Commands.csproj" />
+    <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Sql\DDDZamin.Infrastructure.Data.Sql.csproj" />
+  </ItemGroup>
+
+</Project>

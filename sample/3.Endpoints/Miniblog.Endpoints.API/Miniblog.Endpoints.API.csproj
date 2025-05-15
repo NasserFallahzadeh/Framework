@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\4.Endpoints\DDDZamin.Endpoints.Web\DDDZamin.Endpoints.Web.csproj" />
+    <ProjectReference Include="..\..\1.Core\Miniblog.Core.ApplicationServices\Miniblog.Core.ApplicationServices.csproj" />
+    <ProjectReference Include="..\..\1.Core\Miniblog.Core.Contracts\Miniblog.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\1.Core\MIniblog.Core.Domain\Miniblog.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\1.Core\Miniblog.Core.RequestResponse\Miniblog.Core.RequestResponse.csproj" />
+    <ProjectReference Include="..\..\2.Infrastructure\Data\Miniblog.Infrastructure.Data.Sql.Commands\Miniblog.Infrastructure.Data.Sql.Commands.csproj" />
+    <ProjectReference Include="..\..\2.Infrastructure\Data\Miniblog.Infrastructure.Data.Sql.Queries\Miniblog.Infrastructure.Data.Sql.Queries.csproj" />
+  </ItemGroup>
+
+</Project>

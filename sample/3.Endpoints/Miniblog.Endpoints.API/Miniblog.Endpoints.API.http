@@ -1,0 +1,6 @@
+@Miniblog.Endpoints.API_HostAddress = http://localhost:5185
+
+GET {{Miniblog.Endpoints.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="Zamin.Extensions.ChangeDataLog.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Zamin.Extensions.UsersManagement.Abstractions" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\2.Core\DDDZamin.Core.Contracts\DDDZamin.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\2.Core\DDDZamin.Core.Domain.Toolkits\DDDZamin.Core.Domain.Toolkits.csproj" />
+    <ProjectReference Include="..\DDDZamin.Infrastructure.Data.Sql\DDDZamin.Infrastructure.Data.Sql.csproj" />
+  </ItemGroup>
+
+</Project>
