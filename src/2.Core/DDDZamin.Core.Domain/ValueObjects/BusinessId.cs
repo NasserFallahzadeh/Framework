@@ -2,7 +2,7 @@
 
 namespace DDDZamin.Core.Domain.ValueObjects;
 
-public class BusinessId:BaseValueObject<BusinessId>
+public class BusinessId : BaseValueObject<BusinessId>
 {
     public Guid Value { get; private init; }
 
@@ -10,7 +10,7 @@ public class BusinessId:BaseValueObject<BusinessId>
 
     public static BusinessId FromGuid(Guid value) => new() { Value = value };
 
-    private BusinessId(){}
+    private BusinessId() { }
 
     public BusinessId(string value)
     {
@@ -23,7 +23,7 @@ public class BusinessId:BaseValueObject<BusinessId>
             throw new InvalidValueObjectStateException("ValidationErrorInvalidValue", nameof(BusinessId));
     }
 
-    public override string ToString() => 
+    public override string ToString() =>
         Value.ToString();
 
     protected override IEnumerable<object> GetEqualityComponents()

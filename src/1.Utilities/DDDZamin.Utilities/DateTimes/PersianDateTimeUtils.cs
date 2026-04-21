@@ -179,7 +179,7 @@ public static class PersianDateTimeUtils
     /// </summary>
     /// <param name="dt"></param>
     /// <returns>تاریخ شمسی</returns>
-    public static string ToLongPersianDateTimeString(this DateTime dt) => dt.ToLongPersianDateTimeString(
+    public static string ToLongPersianDateTimeString(this DateTime dt) => dt.ToPersianDateTimeString(
         $"{PersianCulture.Instance.DateTimeFormat.LongDatePattern}، {PersianCulture.Instance.DateTimeFormat.LongTimePattern}");
 
     /// <summary>
@@ -231,7 +231,7 @@ public static class PersianDateTimeUtils
     public static PersianDay ToPersianYearMonthDay(this DateTimeOffset? gregorianDate,
         DateTimeOffsetPart dateTimeOffsetPart = DateTimeOffsetPart.IranLocalDateTime) =>
         gregorianDate == null
-            ? throw ArgumentNullException(nameof(gregorianDate))
+            ? throw new ArgumentNullException(nameof(gregorianDate))
             : gregorianDate.Value.GetDateTimeOffsetPart(dateTimeOffsetPart).ToPersianYearMonthDay();
 
     /// <summary>

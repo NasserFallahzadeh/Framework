@@ -10,5 +10,7 @@ public abstract class ApplicationServiceResult:IApplicationServiceResult
 
     public void AddMessage(string error) => _messages.Add(error);
 
+    public void AddMessages(List<string> errors) => _messages.AddRange(errors);
+
     public void ClearMessages() => _messages.Clear();
 }

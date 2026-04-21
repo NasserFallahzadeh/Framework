@@ -2,7 +2,7 @@
 
 namespace DDDZamin.Utilities.Extensions;
 
-public static class StringValidateExtensions
+public static class StringValidatorExtensions
 {
     /// <summary>
     /// صحت سنجی کد ملی
@@ -17,7 +17,7 @@ public static class StringValidateExtensions
 
         nationalCode = nationalCode.PadLeft(10, '0');
 
-        if (!nationalCode.IsNumberic())
+        if (!nationalCode.IsNumeric())
             return false;
 
         if (!IsFormat1Validate(nationalCode))

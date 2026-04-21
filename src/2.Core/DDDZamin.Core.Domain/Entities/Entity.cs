@@ -2,8 +2,8 @@
 
 namespace DDDZamin.Core.Domain.Entities;
 
-public abstract class Entity<TId>:IAuditableEntity
-where TId:struct,
+public abstract class Entity<TId> : IAuditableEntity
+where TId : struct,
 IComparable,
 IComparable<TId>,
 IConvertible,
@@ -14,7 +14,7 @@ IFormattable
 
     public BusinessId BusinessId { get; protected set; } = BusinessId.FromGuid(Guid.NewGuid());
 
-    protected Entity(){}
+    protected Entity() { }
 
     #region Equality Check
 
@@ -47,4 +47,4 @@ IFormattable
     #endregion
 }
 
-public abstract class Entity:Entity<long>{}
+public abstract class Entity : Entity<long> { }

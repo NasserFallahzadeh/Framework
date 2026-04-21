@@ -1,6 +1,6 @@
-﻿using System.Linq.Expressions;
-using DDDZamin.Core.Domain.Entities;
+﻿using DDDZamin.Core.Domain.Entities;
 using DDDZamin.Core.Domain.ValueObjects;
+using System.Linq.Expressions;
 
 namespace DDDZamin.Core.Contracts.Data.Commands;
 
@@ -9,7 +9,7 @@ namespace DDDZamin.Core.Contracts.Data.Commands;
 /// </summary>
 /// <typeparam name="TEntity">کلاسی که جهت ذخیره سازی انتخاب می‌شود</typeparam>
 /// <typeparam name="TId"></typeparam>
-public interface ICommandRepository<TEntity,TId>:IUnitOfWork where TEntity:AggregateRoot<TId> where TId:struct,IComparable,
+public interface ICommandRepository<TEntity, in TId> : IUnitOfWork where TEntity : AggregateRoot<TId> where TId : struct, IComparable,
     IComparable<TId>,
     IConvertible,
     IEquatable<TId>,

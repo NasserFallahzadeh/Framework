@@ -1,4 +1,5 @@
 ﻿using DDDZamin.Core.Domain.Entities;
+using DDDZamin.Core.Domain.Events;
 using DDDZamin.Core.Domain.Exceptions;
 using Miniblog.Core.Domain.People.DomainEvents;
 using Miniblog.Core.Domain.People.ValueObjects;
@@ -12,16 +13,14 @@ public class Person : AggregateRoot<int>
 
     public FirstName FirstName { get; private set; }
 
-    public LastName LastName { get; set; }
+    public LastName LastName { get; private set; }
 
     #endregion
 
     public Person(int id, string firstName, string lastName)
     {
         if (id < 1)
-        {
             throw new InvalidEntityStateException(MessagePattern.IdValidationMessage);
-        }
 
         Id = id;
         FirstName = firstName;
@@ -33,6 +32,6 @@ public class Person : AggregateRoot<int>
     {
         FirstName = firstName;
 
-        AddEvent(new PersonNameChanged(Id,firstName));
+        AddEvent(new PersonNameChanged(Id, firstName));
     }
 }

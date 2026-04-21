@@ -12,7 +12,7 @@ public class AggregateRoot<TId> : Entity<TId>, IAggregateRoot where TId : struct
 {
     private readonly List<IDomainEvent> _events;
 
-    protected AggregateRoot() => _events=new List<IDomainEvent>();
+    protected AggregateRoot() => _events= [];
 
     public AggregateRoot(IEnumerable<IDomainEvent> events)
     {
@@ -35,7 +35,7 @@ public class AggregateRoot<TId> : Entity<TId>, IAggregateRoot where TId : struct
     private void Mutate(IDomainEvent @event)
     {
         var onMethod = GetType().GetMethod("On", BindingFlags.Instance | BindingFlags.NonPublic, [@event.GetType()]);
-        onMethod.Invoke(this, new[] { @event });
+        onMethod.Invoke(this, [@event]);
     }
 
     protected void AddEvent(IDomainEvent @event) => _events.Add(@event);

@@ -66,7 +66,7 @@ public static class AudittableShadowProperties
         {
             modifiedEntry.Property(ModifiedDateTime).CurrentValue = now;
 
-            modifiedEntry.Property(ModifiedByUserId)
+            modifiedEntry.Property(ModifiedByUserId);
         }
     }
 }

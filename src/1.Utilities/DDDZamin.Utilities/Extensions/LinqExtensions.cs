@@ -29,12 +29,10 @@ public static class LinqExtensions
     {
         DataTable dataTable = new(typeof(T).Name);
 
-        var props=typeof(T).GetProperties(BindingFlags.Public|BindingFlags.Instance).ToList();
+        var props=typeof(T).GetProperties(BindingFlags.Public|BindingFlags.Instance)
+            .ToList();
 
-        props.ForEach(p =>
-        {
-            dataTable.Columns.Add(p.Name);
-        });
+        props.ForEach(p => dataTable.Columns.Add(p.Name));
 
         list.ForEach(l =>
         {
@@ -49,18 +47,8 @@ public static class LinqExtensions
         return dataTable;
     }
 
-    public static List<T> ToList<T>(this DataTable dt)
-    {
-        var data = new List<T>();
-
-        foreach (DataRow row in dt.Rows)
-        {
-            T item = GetItem<T>(row);
-            data.Add(item);
-        }
-
-        return data;
-    }
+    public static List<T> ToList<T>(this DataTable dt) => 
+        (from DataRow row in dt.Rows select GetItem<T>(row)).ToList();
 
     private static T GetItem<T>(DataRow row)
     {
@@ -100,7 +88,7 @@ public static class LinqExtensions
     /// <param name="query">Queryable to apply filtering</param>
     /// <param name="condition">A boolean value</param>
     /// <param name="predicate">Predicate to filter the query</param>
-    /// <returns>Filtered or not fitlered query based on <paramref name="condition"/></returns>
+    /// <returns>Filtered or not filtered query based on <paramref name="condition"/></returns>
     public static IQueryable<T> WhereIf<T>(this IQueryable<T> query, bool condition,
         Expression<Func<T, int, bool>> predicate) =>
         condition

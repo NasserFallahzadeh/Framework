@@ -14,14 +14,11 @@ public class FirstName:BaseValueObject<FirstName>
     public FirstName(string value)
     {
         if (string.IsNullOrEmpty(value))
-        {
             throw new InvalidValueObjectStateException(MessagePattern.EmptyStringValidationMessage, nameof(FirstName));
-        }
 
         if (value.IsLengthBetween(2,50))
-        {
             throw new InvalidValueObjectStateException(MessagePattern.StringLengthValidationMessage, nameof(FirstName),"2","50");
-        }
+
         Value = value;
     }
     protected override IEnumerable<object> GetEqualityComponents()

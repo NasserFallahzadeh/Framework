@@ -2,7 +2,7 @@
 
 namespace DDDZamin.Core.Contracts.ApplicationServices.Events;
 
-public interface IDomainEventHandler<TDomainEvent> where TDomainEvent:IDomainEvent
+public interface IDomainEventHandler<in TDomainEvent> where TDomainEvent:IDomainEvent
 {
     Task Handle(TDomainEvent Event);
 }

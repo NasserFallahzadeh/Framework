@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -15,6 +15,18 @@
     <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Queries\DDDZamin.Infrastructure.Data.Sql.Queries.csproj" />
     <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Sql.Commands\DDDZamin.Infrastructure.Data.Sql.Commands.csproj" />
     <ProjectReference Include="..\..\3.Infrastructure\Data\DDDZamin.Infrastructure.Data.Sql\DDDZamin.Infrastructure.Data.Sql.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="ModelBinding\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.9" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="10.0.6" />
+    <PackageReference Include="Scrutor" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
